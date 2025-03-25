@@ -13,5 +13,11 @@ namespace drugstore
     /// </summary>
     public partial class App : Application
     {
+        public static byte[] Received { get; set; } //принимает запросы
+        private async void Application_Startup(object sender, StartupEventArgs e)
+        {
+            Received = new byte[2048];
+            await Client.GetInstance().Connect();
+        }
     }
 }

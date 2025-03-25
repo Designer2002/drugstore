@@ -25,6 +25,8 @@ namespace drugstore
             InitializeComponent();
             Close.Margin = new Thickness(Width / 3, 0, 0, 0);
             Start.Margin = new Thickness(Width / 3 * -1, 0, 0, 0);
+            canvas.Margin = new Thickness(Width / 7.2f, -20, 0, 0);
+            
         }
 
         private void grdHeader_PreviewMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
@@ -47,12 +49,15 @@ namespace drugstore
         private void Close_MouseLeave(object sender, MouseEventArgs e)
         {
             Close.FontSize -= 2;
-            Close.Foreground = new SolidColorBrush(Colors.Coral);
+            Close.Foreground = new SolidColorBrush(Colors.Pink);
         }
 
         private void Start_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
-            MessageBox.Show("Тут пока ничего нет");
+            
+            WindowLogin login = new WindowLogin();
+            login.Show();
+            this.Hide();
         }
 
         private void Start_MouseEnter(object sender, MouseEventArgs e)
@@ -66,5 +71,11 @@ namespace drugstore
             Start.FontSize -= 2;
             Start.Foreground = new SolidColorBrush(Color.FromRgb(129, 255, 186));
         }
+
+        private void Window_Closed(object sender, EventArgs e)
+        {
+            Application.Current.Shutdown();
+        }
+
     }
 }

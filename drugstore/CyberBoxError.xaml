@@ -1,0 +1,88 @@
+﻿<Window x:Class="drugstore.CyberBoxError" Closed="Window_Closed"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:drugstore"
+        xmlns:hw="http://schemas.hpod9.com/haley/wpf"
+        xmlns:hm="http://schemas.hpod9.com/haley/mvvm"
+        xmlns:beh="http://schemas.microsoft.com/xaml/behaviors"
+        mc:Ignorable="d"
+        Title="Error" FontFamily="Resources/#Minecraft Ten font cyrillic Regular" Height="250" Width="250" WindowStyle="None" Background="#0CFFFFFF" AllowsTransparency="True" hm:WindowBlurAP.IsEnabled="True">
+    <Border IsHitTestVisible="True" ClipToBounds="True" BorderThickness="3" BorderBrush="White" Background="#19FF5100">
+
+        <beh:Interaction.Behaviors>
+            <hw:BorderClipper EnableClip="True"/>
+        </beh:Interaction.Behaviors>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="20"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="30"/>
+                <ColumnDefinition Width="160"/>
+                <ColumnDefinition Width="20"/>
+                <ColumnDefinition Width="20"/>
+
+            </Grid.ColumnDefinitions>
+            <Grid Background="Transparent" x:Name="grdHeader" IsHitTestVisible="True" PreviewMouseLeftButtonDown="grdHeader_PreviewMouseLeftButtonDown"/>
+
+            <Border Grid.Column="2" x:Name="f"  Background="#FFB2FFC0" CornerRadius="100">
+                <Label
+                MouseLeftButtonDown="Fold_MouseLeftButtonDown"
+                MouseEnter="Fold_MouseEnter"
+                MouseLeave="Fold_MouseLeave"
+                x:Name="Fold"
+                Content="—"
+                FontFamily="Verdana Bold"
+                Foreground="White"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center"
+                FontSize="10">
+                </Label>
+            </Border>
+
+            <StackPanel Width="180" Grid.Row="1" Grid.Column="1" Orientation="Vertical" Margin="-10, -35, 0, 0">
+
+                <Image Source="Resources/logo.png"></Image>
+                <Label Margin="0,-20,0,0" Content="провал :(" Foreground="IndianRed" HorizontalAlignment="Center" FontSize="18"></Label>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="80"/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Image Source="Resources/err.png"></Image>
+                    <TextBlock  Grid.Column="1" FontSize="10 " Margin="0,0,5,0" x:Name="message" TextWrapping="Wrap" Foreground="Black"></TextBlock>
+                </Grid>
+                <Label x:Name="ok" Margin="0,20,0,0"
+ FontFamily="Resources/#Minecraft Ten font cyrillic Regular"
+ Foreground="Brown"
+ FontSize="12px"
+HorizontalAlignment="Center"
+VerticalAlignment="Center"
+ BorderThickness="0"
+ MouseLeftButtonDown="ok_MouseLeftButtonDown"
+ MouseEnter="ok_MouseEnter"
+ MouseLeave="ok_MouseLeave" 
+     Grid.Row="3"
+ >OK</Label>
+            </StackPanel>
+
+            <Border Grid.Column="3" x:Name="c" Margin="10,0,-10,0"  Background="#FFFF6C6C" CornerRadius="100">
+                <Label
+                MouseEnter="Close_MouseEnter"
+                    MouseLeave="Close_MouseLeave"
+                    MouseLeftButtonDown="Close_MouseLeftButtonDown"
+                x:Name="Close"
+                Content="X"
+                FontFamily="Verdana"
+                Foreground="White"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center"
+                FontSize="10">
+                </Label>
+            </Border>
+        </Grid>
+    </Border>
+</Window>

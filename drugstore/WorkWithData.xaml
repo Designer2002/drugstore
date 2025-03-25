@@ -1,0 +1,201 @@
+﻿<Window x:Class="drugstore.WorkWithData" Closed="Window_Closed"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:drugstore" xmlns:beh="http://schemas.microsoft.com/xaml/behaviors" xmlns:hw="http://schemas.hpod9.com/haley/wpf"
+        xmlns:hm="http://schemas.hpod9.com/haley/mvvm"
+        mc:Ignorable="d"
+        Title="MainWindow" FontFamily="Resources/#Minecraft Ten font cyrillic Regular" Height="820" Width="800" WindowStyle="None" Background="#0CFFFFFF" AllowsTransparency="True" hm:WindowBlurAP.IsEnabled="True">
+    <Border Background="#23E6A4B6" IsHitTestVisible="True" ClipToBounds="True" BorderThickness="1" BorderBrush="White">
+
+        <beh:Interaction.Behaviors>
+            <hw:BorderClipper EnableClip="True"/>
+        </beh:Interaction.Behaviors>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="30"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="60"/>
+                <ColumnDefinition Width="660"/>
+                <ColumnDefinition Width="30"/>
+                <ColumnDefinition Width="30"/>
+
+            </Grid.ColumnDefinitions>
+            <Grid Background="Transparent" x:Name="grdHeader" IsHitTestVisible="True" PreviewMouseLeftButtonDown="grdHeader_PreviewMouseLeftButtonDown"/>
+            <StackPanel Width="660" Grid.Row="1" Grid.Column="1" Orientation="Vertical">
+                <Image Source="Resources/logo.png" Width="200" Margin="0,-20,0,-20"></Image>
+                <Label HorizontalAlignment="Center" Name="title" Foreground="White" FontSize="20" Content="редактировать реестр"></Label>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="200"/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Foreground="#FFC3C3C3" FontSize="16" Text="Название"></TextBlock>
+                    <TextBox Grid.Column="1" BorderThickness="1" FontSize="16" GotFocus="TextBox_GotFocus" LostFocus="TextBox_LostFocus" Name="name" SelectionBrush="#FF010B46" Foreground="White" BorderBrush="#FF0040FF" Background="#7F884576"></TextBox>
+                </Grid>
+                <Grid  Margin="0,10,0,0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="200"/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Foreground="#FFC3C3C3" FontSize="16" Text="Назначение"></TextBlock>
+                    <TextBox Grid.Column="1" BorderThickness="1" FontSize="16" GotFocus="nazn_GotFocus" LostFocus="nazn_LostFocus" Name="nazn" SelectionBrush="#FF010B46" Foreground="White" BorderBrush="#FF0040FF" Background="#7F884576"></TextBox>
+                </Grid>
+                <Grid  Margin="0,10,0,0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="200"/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Foreground="#FFC3C3C3" FontSize="16" Text="Акт. вещество"></TextBlock>
+                    <TextBox Grid.Column="1" BorderThickness="1" FontSize="16" GotFocus="dey_GotFocus" LostFocus="dey_LostFocus" Name="dey" SelectionBrush="#FF010B46" Foreground="White" BorderBrush="#FF0040FF" Background="#7F884576"></TextBox>
+                </Grid>
+                <Grid  Margin="0,10,0,0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="200"/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Foreground="#FFC3C3C3" FontSize="16" Text="форма выпуска"></TextBlock>
+                    <TextBox Grid.Column="1" BorderThickness="1" FontSize="16" GotFocus="for_GotFocus" LostFocus="for_LostFocus" Name="for" SelectionBrush="#FF010B46" Foreground="White" BorderBrush="#FF0040FF" Background="#7F884576"></TextBox>
+                </Grid>
+                <Grid  Margin="0,10,0,0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="200"/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Foreground="#FFC3C3C3" FontSize="16" Text="рецепт"></TextBlock>
+                    <Grid Grid.Column="1">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <RadioButton Foreground="#FFFFB6EF" x:Name="yesr" Checked="yesr_Checked"  Content="Да"></RadioButton>
+                        <RadioButton Foreground="#FFFFB6EF" x:Name="norec" Checked="norec_Checked" Grid.Column="1" Content="Нет"></RadioButton>
+                    </Grid>
+                </Grid>
+                <Grid  Margin="0,10,0,0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="200"/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Foreground="#FFC3C3C3" FontSize="16" Text="Страна"></TextBlock>
+                    <TextBox Grid.Column="1" BorderThickness="1" FontSize="16" GotFocus="country_GotFocus" LostFocus="country_LostFocus" Name="country" SelectionBrush="#FF010B46" Foreground="White" BorderBrush="#FF0040FF" Background="#7F884576"></TextBox>
+                </Grid>
+                <Grid  Margin="0,10,0,0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="200"/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Foreground="#FFC3C3C3" FontSize="16" Text="срок хр.(месяцы)"></TextBlock>
+                    <TextBox Grid.Column="1" BorderThickness="1" FontSize="16" GotFocus="godn_GotFocus" LostFocus="godn_LostFocus" Name="godn" SelectionBrush="#FF010B46" Foreground="White" BorderBrush="#FF0040FF" Background="#7F884576"></TextBox>
+                </Grid>
+                <Grid  Margin="0,10,0,0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="200"/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Foreground="#FFC3C3C3" FontSize="16" Text="наличие"></TextBlock>
+                    <Grid Grid.Column="1">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <CheckBox Foreground="#FFFFB6EF" x:Name="f1" Checked="yesr_Checked"  Content="филиал 1"></CheckBox>
+                        <CheckBox Foreground="#FFFFB6EF" x:Name="f2" Checked="norec_Checked" Grid.Column="1" Content="филиал 2"></CheckBox>
+                        <CheckBox Foreground="#FFFFB6EF" x:Name="f3" Checked="yesr_Checked" Grid.Column="2" Content="филиал 3"></CheckBox>
+                        <CheckBox Foreground="#FFFFB6EF" x:Name="f4" Checked="norec_Checked" Grid.Column="3" Content="филиал 4"></CheckBox>
+                    </Grid>
+                </Grid>
+                <Grid  Margin="0,10,0,0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="200"/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Foreground="#FFC3C3C3" FontSize="16" Text="цены"></TextBlock>
+                    <Grid Grid.Column="1">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <TextBox Grid.Column="0" Margin="0,0,10,0" BorderThickness="1" FontSize="16" GotFocus="prices1_GotFocus" LostFocus="prices1_LostFocus" Name="prices1" SelectionBrush="#FF010B46" Foreground="White" BorderBrush="#FF0040FF" Background="#7F884576"></TextBox>
+                        <TextBox Grid.Column="1" Margin="0,0,10,0" BorderThickness="1" FontSize="16" GotFocus="prices2_GotFocus" LostFocus="prices2_LostFocus" Name="prices2" SelectionBrush="#FF010B46" Foreground="White" BorderBrush="#FF0040FF" Background="#7F884576"></TextBox>
+                        <TextBox Grid.Column="2" Margin="0,0,10,0" BorderThickness="1" FontSize="16" GotFocus="prices3_GotFocus" LostFocus="prices3_LostFocus" Name="prices3" SelectionBrush="#FF010B46" Foreground="White" BorderBrush="#FF0040FF" Background="#7F884576"></TextBox>
+                        <TextBox Grid.Column="3" Margin="0,0,10,0" BorderThickness="1" FontSize="16" GotFocus="prices4_GotFocus" LostFocus="prices4_LostFocus" Name="prices4" SelectionBrush="#FF010B46" Foreground="White" BorderBrush="#FF0040FF" Background="#7F884576"></TextBox>
+                    </Grid>
+                </Grid>
+                <Grid  Margin="0,10,0,0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="200"/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Foreground="#FFC3C3C3" FontSize="16" Text="изготовлено"></TextBlock>
+                    <Grid Grid.Column="1">
+                        <Calendar HorizontalAlignment="Left" SelectionMode="SingleDate" SelectedDatesChanged="izg_SelectedDatesChanged" BorderThickness="1" FontSize="16" GotFocus="godn_GotFocus" LostFocus="godn_LostFocus" Name="izg" Foreground="#FF940000" BorderBrush="#FF0040FF" Background="#7FFFFFFF"></Calendar>
+                        <TextBox Grid.Column="1" Height="32" MouseLeftButtonDown="data_MouseLeftButtonDown" VerticalAlignment="Top" BorderThickness="1" FontSize="16" GotFocus="godn_GotFocus" LostFocus="godn_LostFocus" Name="data" SelectionBrush="#FF010B46" Foreground="White" BorderBrush="#FF0040FF" Background="#7F884576"></TextBox>
+                    </Grid>
+                </Grid>
+                <Border Background="#FFCC87B4" Margin="110,30,110,0" x:Name="send_b" CornerRadius="10" MouseEnter="send_b_MouseEnter" MouseLeave="send_b_MouseLeave" MouseLeftButtonDown="send_b_MouseLeftButtonDown">
+                    <Label HorizontalAlignment="Center" FontSize="20" Foreground="White" x:Name="send" >сохранить</Label>
+                </Border>
+                <Grid x:Name="notall" Width="400">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="27*"/>
+                        <ColumnDefinition Width="323*"/>
+                        <ColumnDefinition Width="50"/>
+                    </Grid.ColumnDefinitions>
+                    <Label Foreground="Pink" Grid.Column="1" FontSize="20" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="12,0,0,0">Данные некорректны</Label>
+                    <Border Grid.Column="2" Background="#FFD2475A" CornerRadius="100">
+                        <Label Content="!" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="26"></Label>
+                    </Border>
+                </Grid>
+            </StackPanel>
+            <Border Grid.Column="2" x:Name="f"  Background="#FF6C9DFF" CornerRadius="100">
+                <Label
+    MouseLeftButtonDown="Fold_MouseLeftButtonDown"
+    MouseEnter="Fold_MouseEnter"
+    MouseLeave="Fold_MouseLeave"
+    x:Name="Fold"
+    Content="—"
+    FontFamily="Verdana Bold"
+    Foreground="White"
+    HorizontalAlignment="Center"
+    VerticalAlignment="Center"
+    FontSize="16">
+                </Label>
+            </Border>
+            <Border Grid.Column="3" x:Name="c" Margin="10,0,-10,0"  Background="#FFFF6C9B" CornerRadius="100">
+                <Label
+    MouseEnter="Close_MouseEnter"
+        MouseLeave="Close_MouseLeave"
+        MouseLeftButtonDown="Close_MouseLeftButtonDown"
+    x:Name="Close"
+    Content="X"
+    FontFamily="Verdana"
+    Foreground="White"
+    HorizontalAlignment="Center"
+    VerticalAlignment="Center"
+    FontSize="16">
+                </Label>
+            </Border >
+            <Border MouseEnter="ba_MouseEnter"
+        MouseLeave="ba_MouseLeave"
+        MouseLeftButtonDown="ba_MouseLeftButtonDown" Grid.Column="0" x:Name="ba" Margin="10,0,20,0" Background="MediumOrchid" CornerRadius="100">
+                <Label
+    
+    Content="←"
+    FontFamily="Verdana"
+    Foreground="White"
+    HorizontalAlignment="Center"
+    VerticalAlignment="Center"
+    FontSize="16">
+                </Label>
+            </Border>
+        </Grid>
+    </Border>
+</Window>
